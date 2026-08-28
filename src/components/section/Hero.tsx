@@ -6,16 +6,27 @@ import {
   MessageCircle,
   Sparkles,
 } from "lucide-react";
+
 import { motion } from "motion/react";
 
 export default function Hero() {
   return (
     <section className="hero-home" id="home">
+      {/* =========================================
+          BACKGROUND IMAGE
+          Image location:
+          public/images/hero-bg.png
 
-      {/* Full background image */}
+          Browser path:
+          /images/hero-bg.png
+          ========================================= */}
+
       <div
         className="hero-home-bg"
         aria-hidden="true"
+        style={{
+          backgroundImage: "url('/images/hero-bg.png')",
+        }}
       />
 
       {/* Readability overlay */}
@@ -35,8 +46,11 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="hero-home-container">
+      {/* =========================================
+          HERO CONTENT
+          ========================================= */}
 
+      <div className="hero-home-container">
         <motion.div
           className="hero-home-content"
           initial={{
@@ -52,7 +66,6 @@ export default function Hero() {
             ease: "easeOut",
           }}
         >
-
           {/* Eyebrow */}
           <motion.div
             className="hero-home-eyebrow"
@@ -110,9 +123,10 @@ export default function Hero() {
               delay: 0.4,
             }}
           >
-            Discover the comforting taste of jaggery-based
-            tea and beverage premixes, crafted for a rich,
-            familiar cup with every brew.
+            Discover the comforting taste of
+            jaggery-based tea and beverage premixes,
+            crafted for a rich, familiar cup with
+            every brew.
           </motion.p>
 
           {/* Buttons */}
@@ -131,25 +145,27 @@ export default function Hero() {
               delay: 0.5,
             }}
           >
-
+            {/* Explore Products */}
             <a
               href="#products"
               className="hero-home-primary-btn"
             >
               Explore Products
+
               <ArrowRight size={18} />
             </a>
 
+            {/* WhatsApp */}
             <a
-              href="https://wa.me/918409104406?text=Hello%20Maa%20Vindhyavasini%2C%20I%20want%20to%20know%20more%20about%20your%20Gud%20Ki%20Chai."
+              href="https://wa.me/918409104406?text=Hello%20Maa%20Vindhyavasini%2C%20I%20want%20to%20know%20more%20about%20your%20Gud%20Ki%20Chai"
               target="_blank"
               rel="noopener noreferrer"
               className="hero-home-whatsapp-btn"
             >
               <MessageCircle size={18} />
+
               WhatsApp Us
             </a>
-
           </motion.div>
 
           {/* Features */}
@@ -168,53 +184,64 @@ export default function Hero() {
               delay: 0.65,
             }}
           >
-
+            {/* Feature 1 */}
             <div className="hero-home-feature">
-
               <div className="hero-home-feature-icon">
                 ✦
               </div>
 
               <div>
-                <strong>11+ Flavours</strong>
-                <span>Wide Variety</span>
-              </div>
+                <strong>
+                  11+ Flavours
+                </strong>
 
+                <span>
+                  Wide Variety
+                </span>
+              </div>
             </div>
 
+            {/* Feature 2 */}
             <div className="hero-home-feature">
-
               <div className="hero-home-feature-icon">
                 ☕
               </div>
 
               <div>
-                <strong>Easy-to-make Premix</strong>
-                <span>Just Add Water or Milk</span>
-              </div>
+                <strong>
+                  Easy-to-make Premix
+                </strong>
 
+                <span>
+                  Just Add Water or Milk
+                </span>
+              </div>
             </div>
 
+            {/* Feature 3 */}
             <div className="hero-home-feature">
-
               <div className="hero-home-feature-icon">
                 🌿
               </div>
 
               <div>
-                <strong>Made for Everyday Chai</strong>
-                <span>Perfect for Every Moment</span>
+                <strong>
+                  Made for Everyday Chai
+                </strong>
+
+                <span>
+                  Perfect for Every Moment
+                </span>
               </div>
-
             </div>
-
           </motion.div>
-
         </motion.div>
-
       </div>
 
-      {/* Scroll to About */}
+      {/* =========================================
+          SCROLL TO ABOUT
+          ========================================= */}
+
       <motion.a
         href="#about"
         className="hero-home-scroll"
@@ -229,12 +256,18 @@ export default function Hero() {
         aria-label="Scroll to About section"
       >
         <ArrowDown size={18} />
-        <span>SCROLL DOWN</span>
+
+        <span>
+          SCROLL DOWN
+        </span>
       </motion.a>
 
-      {/* Floating WhatsApp */}
+      {/* =========================================
+          FLOATING WHATSAPP
+          ========================================= */}
+
       <motion.a
-        href="https://wa.me/918409104406?text=Hello%20Maa%20Vindhyavasini%2C%20I%20want%20to%20enquire%20about%20your%20products."
+        href="https://wa.me/918409104406?text=Hello%20Maa%20Vindhyavasini%2C%20I%20want%20to%20enquire%20about%20your%20products"
         target="_blank"
         rel="noopener noreferrer"
         className="hero-home-floating-whatsapp"
@@ -260,7 +293,6 @@ export default function Hero() {
       >
         <MessageCircle size={25} />
       </motion.a>
-
     </section>
   );
 }
