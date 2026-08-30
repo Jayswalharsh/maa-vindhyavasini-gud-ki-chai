@@ -7,7 +7,7 @@ export const products: Product[] = [
     description:
       "Rich, creamy and comforting with the distinctive sweetness of jaggery.",
     category: "JAGGERY SPECIAL",
-    image: "maa-vindhyavasini-500gm.jpg",
+    image: "/images/jaggery-basundi.jpg",
     packSizes: ["200GM", "500GM"],
   },
 
@@ -17,7 +17,7 @@ export const products: Product[] = [
     description:
       "Classic chai with the comforting warmth of cardamom and jaggery sweetness.",
     category: "JAGGERY TEA",
-    image: "maa-vindhyavasini-200gm.jpg",
+    image: "/images/jaggery-cardamom-tea.jpg",
     packSizes: ["200GM", "500GM"],
   },
 
@@ -27,7 +27,7 @@ export const products: Product[] = [
     description:
       "Bold, strong and satisfying for those who enjoy a fuller cup of chai.",
     category: "JAGGERY TEA",
-    image: "maa-vindhyavasini-500gm.jpg",
+    image: "/images/jaggery-kadak-tea.jpg",
     packSizes: ["200GM", "500GM"],
   },
 
@@ -37,7 +37,7 @@ export const products: Product[] = [
     description:
       "Bright and refreshing with a pleasant lemon character and jaggery sweetness.",
     category: "JAGGERY TEA",
-    image: "maa-vindhyavasini-200gm.jpg",
+    image: "/images/jaggery-lemon-tea.jpg",
     packSizes: ["200GM", "500GM"],
   },
 
@@ -47,7 +47,7 @@ export const products: Product[] = [
     description:
       "A warm coffee experience combined with the distinctive sweetness of jaggery.",
     category: "JAGGERY COFFEE",
-    image: "maa-vindhyavasini-500gm.jpg",
+    image: "/images/jaggery-hot-coffee.jpg",
     packSizes: ["200GM", "500GM"],
   },
 
@@ -57,7 +57,7 @@ export const products: Product[] = [
     description:
       "A feel-good everyday chai made for a simple and comforting cup.",
     category: "JAGGERY TEA",
-    image: "maa-vindhyavasini-200gm.jpg",
+    image: "/images/mast-jaggery-tea.jpg",
     packSizes: ["200GM", "500GM"],
   },
 
@@ -67,7 +67,7 @@ export const products: Product[] = [
     description:
       "Aromatic spices combined with familiar chai notes and jaggery sweetness.",
     category: "JAGGERY TEA",
-    image: "maa-vindhyavasini-500gm.jpg",
+    image: "/images/jaggery-masala-tea.jpg",
     packSizes: ["200GM", "500GM"],
   },
 
@@ -77,7 +77,7 @@ export const products: Product[] = [
     description:
       "Warm ginger character with a comforting taste for everyday chai moments.",
     category: "JAGGERY TEA",
-    image: "maa-vindhyavasini-200gm.jpg",
+    image: "/images/jaggery-ginger-tea.jpg",
     packSizes: ["200GM", "500GM"],
   },
 
@@ -87,7 +87,7 @@ export const products: Product[] = [
     description:
       "Simple, deep and full-bodied for those who prefer a classic black tea.",
     category: "JAGGERY TEA",
-    image: "maa-vindhyavasini-500gm.jpg",
+    image: "/images/jaggery-black-tea.jpg",
     packSizes: ["200GM", "500GM"],
   },
 
@@ -97,7 +97,7 @@ export const products: Product[] = [
     description:
       "A light tea experience with refreshing citrus notes and jaggery sweetness.",
     category: "GREEN TEA",
-    image: "maa-vindhyavasini-200gm.jpg",
+    image: "/images/jaggery-green-lemon-tea.jpg",
     packSizes: ["200GM", "500GM"],
   },
 
@@ -107,7 +107,7 @@ export const products: Product[] = [
     description:
       "Fresh lemongrass aroma with a smooth finish and familiar jaggery sweetness.",
     category: "JAGGERY TEA",
-    image: "maa-vindhyavasini-500gm.jpg",
+    image: "/images/jaggery-lemongrass-tea.jpg",
     packSizes: ["200GM", "500GM"],
   },
 ];
