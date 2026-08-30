@@ -3,6 +3,7 @@ import {
   Phone,
   MessageCircle,
 } from "lucide-react";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const footerLinks = [
   {
@@ -219,7 +220,7 @@ export default function Footer() {
                   hover:text-[#241008]
                 "
               >
-                IG
+                <FaInstagram size={20} className="text-white" />
               </a>
 
               {/* Facebook */}
@@ -247,7 +248,7 @@ export default function Footer() {
                   hover:text-[#241008]
                 "
               >
-                FB
+                <FaFacebookF size={20} className="text-white" />
               </a>
 
             </div>
