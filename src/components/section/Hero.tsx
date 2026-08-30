@@ -35,17 +35,6 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Decorative elements */}
-      <div
-        className="hero-home-glow hero-home-glow-one"
-        aria-hidden="true"
-      />
-
-      <div
-        className="hero-home-glow hero-home-glow-two"
-        aria-hidden="true"
-      />
-
       {/* =========================================
           HERO CONTENT
           ========================================= */}
