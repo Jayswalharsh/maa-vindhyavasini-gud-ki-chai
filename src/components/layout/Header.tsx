@@ -235,7 +235,7 @@ export default function Header() {
               >
                 <Phone size={18} />
 
-                <span>📞 Call Me</span>
+                <span>Call Me</span>
               </a>
 
               {/* Mobile WhatsApp */}
