@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import PageTransition from "@/components/layout/PageTransition";
 
 import "./globals.css";
 
@@ -32,12 +33,21 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body>
+      <body className="min-h-screen flex flex-col">
+
+        {/* Header */}
         <Header />
 
-        <main>{children}</main>
+        {/* Page Content */}
+        <main className="flex-1">
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </main>
 
+        {/* Footer */}
         <Footer />
+
       </body>
     </html>
   );
