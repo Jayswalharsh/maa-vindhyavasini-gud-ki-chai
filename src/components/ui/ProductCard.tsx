@@ -1,13 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import {
-  ArrowUpRight,
-  MessageCircle,
+  ArrowRight,
   Package,
 } from "lucide-react";
 import { motion } from "motion/react";
-
 import type { Product } from "@/types/product";
 
 type ProductCardProps = {
@@ -23,11 +20,13 @@ export default function ProductCard({
     `Hello Maa Vindhyavasini, I want to enquire about ${product.name}. Please share details about pack sizes, pricing and availability.`
   );
 
+  const whatsappUrl = `https://wa.me/918409104406?text=${whatsappMessage}`;
+
   return (
     <motion.article
       initial={{
         opacity: 0,
-        y: 30,
+        y: 25,
       }}
       whileInView={{
         opacity: 1,
@@ -35,252 +34,317 @@ export default function ProductCard({
       }}
       viewport={{
         once: true,
-        amount: 0.12,
+        amount: 0.15,
       }}
       transition={{
-        duration: 0.55,
+        duration: 0.5,
         delay: Math.min(index * 0.05, 0.3),
       }}
       whileHover={{
-        y: -7,
+        y: -6,
       }}
       className="
         group
+        relative
         flex
         h-full
         flex-col
         overflow-hidden
-        rounded-2xl
+        rounded-[24px]
         border
-        border-[#eadfd2]
+        border-[#e8d9c9]
         bg-white
-        shadow-[0_8px_30px_rgba(72,42,23,0.06)]
-        transition-shadow
-        duration-300
-        hover:shadow-[0_18px_45px_rgba(72,42,23,0.12)]
+        shadow-[0_8px_28px_rgba(72,42,23,0.07)]
+        transition-all
+        duration-500
+        hover:border-[#c8782c]
+        hover:shadow-[0_18px_45px_rgba(72,42,23,0.16)]
       "
     >
       {/* =========================================
           PRODUCT IMAGE
           ========================================= */}
 
-      <div className="relative aspect-[4/5] overflow-hidden bg-[#f7eee3]">
-        {/* Decorative circle */}
-
+      <div
+        className="
+          relative
+          w-full
+          overflow-hidden
+          bg-[#f7eee3]
+          aspect-[4/5]
+        "
+      >
+        {/* Warm background glow */}
         <div
           aria-hidden="true"
           className="
+            pointer-events-none
             absolute
-            left-1/2
-            top-1/2
-            h-[72%]
-            w-[72%]
-            -translate-x-1/2
-            -translate-y-1/2
-            rounded-full
-            border
-            border-[#d9b98e]/30
+            inset-0
+            bg-[radial-gradient(circle_at_center,rgba(214,145,70,0.16),transparent_65%)]
+            opacity-70
+            transition-all
+            duration-500
+            group-hover:opacity-100
           "
         />
 
-        {/* Soft background glow */}
-
-        <div
-          aria-hidden="true"
+        {/* Product image */}
+        <motion.div
           className="
             absolute
-            left-1/2
-            top-1/2
-            h-[55%]
-            w-[55%]
-            -translate-x-1/2
-            -translate-y-1/2
-            rounded-full
-            bg-[#d28a32]/8
-            blur-2xl
+            inset-0
+            flex
+            items-center
+            justify-center
           "
-        />
-
-        {/* Product number */}
-
-        <span
-          className="
-            absolute
-            left-5
-            top-5
-            z-20
-            text-xs
-            font-bold
-            tracking-[0.18em]
-            text-[#a85c25]
-          "
+          whileHover={{
+            scale: 1.025,
+          }}
+          transition={{
+            duration: 0.45,
+            ease: "easeOut",
+          }}
         >
-          {product.number}
-        </span>
+          <img
+            src={product.image}
+            alt={`${product.name} - Maa Vindhyavasini Gud Ki Chai`}
+            className="
+              block
+              h-full
+              w-full
+              object-contain
+              object-center
+              drop-shadow-[0_12px_18px_rgba(61,31,20,0.20)]
+              transition-all
+              duration-500
+              group-hover:drop-shadow-[0_18px_25px_rgba(61,31,20,0.30)]
+            "
+          />
+        </motion.div>
 
-        {/* Category */}
-
+        {/* Category badge */}
         <span
           className="
             absolute
-            right-4
+            left-4
             top-4
             z-20
             rounded-full
             border
-            border-[#dfcdb8]
-            bg-white/90
-            px-3
-            py-1.5
-            text-[9px]
-            font-bold
-            tracking-[0.12em]
-            text-[#6f341f]
+            border-[#e5d7ca]
+            bg-white/95
+            px-3.5
+            py-2
+            text-[10px]
+            font-semibold
+            tracking-[0.02em]
+            text-[#75442c]
+            shadow-[0_5px_14px_rgba(61,31,20,0.10)]
             backdrop-blur-sm
+            transition-all
+            duration-300
+            group-hover:border-[#d49a62]
+            group-hover:shadow-[0_7px_18px_rgba(61,31,20,0.15)]
           "
         >
-          {product.category}
+          {product.category
+            .toLowerCase()
+            .replace(/\b\w/g, (letter) => letter.toUpperCase())}
         </span>
 
-        {/* Product image */}
-
-        <motion.div
+        {/* Image bottom subtle fade */}
+        <div
+          aria-hidden="true"
           className="
-            relative
+            pointer-events-none
+            absolute
+            bottom-0
+            left-0
+            right-0
             z-10
-            flex
-            h-full
-            w-full
-            items-center
-            justify-center
-            p-8
-            sm:p-10
+            h-10
+            bg-gradient-to-t
+            from-[#f7eee3]/25
+            to-transparent
           "
-          whileHover={{
-            scale: 1.04,
-          }}
-          transition={{
-            duration: 0.35,
-          }}
-        >
-          <Image
-            src={`/images/${product.image}`}
-            alt={`${product.name} - Maa Vindhyavasini Gud Ki Chai`}
-            width={780}
-            height={975}
-            className="
-              h-full
-              w-full
-              object-contain
-              drop-shadow-[0_18px_18px_rgba(61,31,20,0.16)]
-            "
-          />
-        </motion.div>
+        />
       </div>
 
       {/* =========================================
-          PRODUCT INFORMATION
+          PRODUCT CONTENT
           ========================================= */}
 
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
+      <div
+        className="
+          flex
+          flex-1
+          flex-col
+          px-5
+          pb-4
+          pt-5
+          sm:px-6
+          sm:pb-5
+          sm:pt-6
+        "
+      >
         {/* Product name */}
-
         <h3
           className="
-            text-xl
+            font-serif
+            text-[20px]
             font-bold
             leading-tight
             tracking-[-0.02em]
             text-[#3d1f14]
+            transition-colors
+            duration-300
+            group-hover:text-[#a85c25]
           "
         >
           {product.name}
         </h3>
 
         {/* Description */}
-
         <p
           className="
-            mt-3
+            mt-1.5
             line-clamp-2
-            min-h-[48px]
-            text-sm
-            leading-6
+            min-h-[42px]
+            text-[13px]
+            leading-5
             text-[#766960]
           "
         >
           {product.description}
         </p>
 
-        {/* =========================================
-            PACK SIZES
-            ========================================= */}
-
-        <div className="mt-5 flex flex-wrap gap-2">
-          {product.packSizes.map((size) => (
-            <span
-              key={size}
-              className="
-                inline-flex
-                items-center
-                gap-1.5
-                rounded-lg
-                bg-[#fff7ed]
-                px-2.5
-                py-1.5
-                text-[11px]
-                font-semibold
-                text-[#7a4829]
-              "
-            >
-              <Package size={12} />
-              {size}
-            </span>
-          ))}
-        </div>
-
-        {/* =========================================
-            ENQUIRY BUTTON
-            ========================================= */}
-
-        <a
-          href={`https://wa.me/918409104406?text=${whatsappMessage}`}
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Divider */}
+        <div
           className="
-            group/button
-            mt-6
-            inline-flex
-            items-center
-            justify-center
-            gap-2
-            rounded-xl
-            bg-[#a85c25]
-            px-4
-            py-3.5
-            text-sm
-            font-semibold
-            text-white
-            transition-all
+            mt-4
+            h-px
+            w-full
+            bg-[#eadfd2]
+            transition-colors
             duration-300
-            hover:bg-[#6f341f]
+            group-hover:bg-[#dfc09f]
+          "
+        />
+
+        {/* =========================================
+            BOTTOM ROW
+            ========================================= */}
+
+        <div
+          className="
+            mt-3
+            flex
+            items-center
+            justify-between
           "
         >
-          <MessageCircle size={16} />
+          {/* Left side */}
+          <div className="flex items-center gap-2.5">
+            <span
+              className="
+                flex
+                h-9
+                w-9
+                shrink-0
+                items-center
+                justify-center
+                rounded-full
+                bg-[#fff1df]
+                text-[#b45f20]
+                transition-all
+                duration-300
+                group-hover:bg-[#b45f20]
+                group-hover:text-white
+              "
+            >
+              <Package size={15} strokeWidth={1.8} />
+            </span>
 
-          <span>Enquire Now</span>
+            <span
+              className="
+                text-[12px]
+                font-medium
+                text-[#765f51]
+              "
+            >
+              Jaggery Based
+            </span>
+          </div>
 
-          <ArrowUpRight
-            size={16}
+          {/* Enquire */}
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Enquire about ${product.name} on WhatsApp`}
             className="
-              transition-transform
+              group/button
+              flex
+              items-center
+              gap-2
+              text-[13px]
+              font-semibold
+              text-[#3d1f14]
+              transition-colors
               duration-300
-              group-hover/button:translate-x-0.5
-              group-hover/button:-translate-y-0.5
+              hover:text-[#a85c25]
             "
-          />
-        </a>
+          >
+            <span>Enquire</span>
+
+            <span
+              className="
+                flex
+                h-8
+                w-8
+                items-center
+                justify-center
+                rounded-full
+                bg-[#f8ecdd]
+                text-[#6f341f]
+                transition-all
+                duration-300
+                group-hover/button:bg-[#a85c25]
+                group-hover/button:text-white
+              "
+            >
+              <ArrowRight
+                size={15}
+                className="
+                  transition-transform
+                  duration-300
+                  group-hover/button:translate-x-0.5
+                "
+              />
+            </span>
+          </a>
+        </div>
       </div>
+
+      {/* =========================================
+          HOVER BORDER EFFECT
+          ========================================= */}
+
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          rounded-[24px]
+          border-2
+          border-transparent
+          transition-all
+          duration-500
+          group-hover:border-[#c8782c]/35
+        "
+      />
     </motion.article>
   );
 }
