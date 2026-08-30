@@ -337,7 +337,10 @@ export default function Header() {
             lg:hidden
           "
         >
-          <AnimatePresence mode="wait" initial={false}>
+          <AnimatePresence
+            mode="wait"
+            initial={false}
+          >
             {open ? (
               <motion.span
                 key="close"
