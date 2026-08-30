@@ -477,41 +477,6 @@ h2 em {
     );
 }
 
-.hero-home-glow {
-  position: absolute;
-
-  z-index: 1;
-
-  border-radius: 50%;
-
-  pointer-events: none;
-}
-
-.hero-home-glow-one {
-  width: 500px;
-  height: 500px;
-
-  right: -100px;
-  top: 10%;
-
-  border: 1px solid rgba(244, 178, 58, 0.22);
-
-  box-shadow:
-    0 0 120px rgba(244, 178, 58, 0.08);
-}
-
-.hero-home-glow-two {
-  width: 300px;
-  height: 300px;
-
-  left: -130px;
-  bottom: 5%;
-
-  background: rgba(244, 178, 58, 0.08);
-
-  filter: blur(10px);
-}
-
 .hero-home-container {
   position: relative;
 
@@ -3364,21 +3329,6 @@ h2 em {
 
     right: 16px;
     bottom: 16px;
-  }
-
-  .hero-home-glow-one {
-    width: 280px;
-    height: 280px;
-
-    right: -130px;
-    top: 25%;
-  }
-
-  .hero-home-glow-two {
-    width: 200px;
-    height: 200px;
-
-    left: -100px;
   }
 
   /* Home sections */

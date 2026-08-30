@@ -9,15 +9,19 @@ import {
 
 import { motion } from "motion/react";
 
+const googleMapsUrl =
+  "https://www.google.com/maps/search/?api=1&query=31%2FD%20Rani%20Road%20Bhuda%2C%20Dhanbad%20-%20826001";
+
+const whatsappUrl =
+  "https://wa.me/918409104406?text=Hello%20Maa%20Vindhyavasini%20Gud%20Ki%20Chai%20%F0%9F%91%8B%0A%0AI%20am%20interested%20in%20your%20jaggery-based%20tea%20and%20beverage%20products.%0A%0APlease%20share%20more%20details%20about%20your%20products%2C%20flavours%2C%20pack%20sizes%20and%20pricing.%0A%0AThank%20you!";
+
 export default function Contact() {
   return (
     <section
       id="contact"
       className="relative overflow-hidden bg-[#3d1f14] py-20 text-white sm:py-24 lg:py-28"
     >
-      {/* =========================================
-          BACKGROUND DECORATION
-          ========================================= */}
+      {/* Background Decoration */}
 
       <div
         aria-hidden="true"
@@ -30,14 +34,11 @@ export default function Contact() {
       />
 
       <div className="relative mx-auto w-[calc(100%-32px)] max-w-7xl sm:w-[calc(100%-48px)] lg:w-[calc(100%-64px)]">
-        {/* =========================================
-            CONTACT GRID
-            ========================================= */}
+        {/* Contact Grid */}
 
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-          {/* =========================================
-              LEFT CONTENT
-              ========================================= */}
+
+          {/* LEFT CONTENT */}
 
           <motion.div
             initial={{
@@ -80,15 +81,15 @@ export default function Contact() {
               team directly.
             </p>
 
-            {/* =========================================
-                CONTACT INFORMATION
-                ========================================= */}
+            {/* CONTACT INFORMATION */}
 
             <div className="mt-8 max-w-xl space-y-3">
+
               {/* Phone */}
 
               <a
                 href="tel:+918409104406"
+                aria-label="Call Maa Vindhyavasini"
                 className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 sm:p-5"
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#d9a55e]/15 text-[#d9a55e] transition-colors duration-300 group-hover:bg-[#d9a55e] group-hover:text-[#3d1f14]">
@@ -107,16 +108,17 @@ export default function Contact() {
 
                 <ArrowRight
                   size={17}
-                  className="ml-auto text-white/30 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#d9a55e]"
+                  className="ml-auto shrink-0 text-white/30 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#d9a55e]"
                 />
               </a>
 
               {/* WhatsApp */}
 
               <a
-                href="https://wa.me/918409104406"
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Start WhatsApp enquiry"
                 className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 sm:p-5"
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#d9a55e]/15 text-[#d9a55e] transition-colors duration-300 group-hover:bg-[#d9a55e] group-hover:text-[#3d1f14]">
@@ -135,14 +137,20 @@ export default function Contact() {
 
                 <ArrowRight
                   size={17}
-                  className="ml-auto text-white/30 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#d9a55e]"
+                  className="ml-auto shrink-0 text-white/30 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#d9a55e]"
                 />
               </a>
 
-              {/* Address */}
+              {/* Address / Google Maps */}
 
-              <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#d9a55e]/15 text-[#d9a55e]">
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Maa Vindhyavasini location in Google Maps"
+                className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 sm:p-5"
+              >
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#d9a55e]/15 text-[#d9a55e] transition-colors duration-300 group-hover:bg-[#d9a55e] group-hover:text-[#3d1f14]">
                   <MapPin size={19} />
                 </span>
 
@@ -157,13 +165,16 @@ export default function Contact() {
                     Dhanbad - 826001
                   </strong>
                 </div>
-              </div>
+
+                <ArrowRight
+                  size={17}
+                  className="ml-auto shrink-0 text-white/30 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#d9a55e]"
+                />
+              </a>
             </div>
           </motion.div>
 
-          {/* =========================================
-              RIGHT CONTACT CARD
-              ========================================= */}
+          {/* RIGHT CONTACT CARD */}
 
           <motion.div
             initial={{
@@ -186,7 +197,8 @@ export default function Contact() {
             {/* Card */}
 
             <div className="relative overflow-hidden rounded-[28px] border border-[#d9a55e]/25 bg-[#fffaf2] p-7 text-[#3d1f14] shadow-[0_25px_70px_rgba(0,0,0,0.2)] sm:p-9 lg:p-10">
-              {/* Decorative circle */}
+
+              {/* Decorative Circle */}
 
               <div
                 aria-hidden="true"
@@ -199,7 +211,8 @@ export default function Contact() {
               />
 
               <div className="relative">
-                {/* Card heading */}
+
+                {/* Card Heading */}
 
                 <span className="text-xs font-bold tracking-[0.2em] text-[#a85c25]">
                   READY FOR YOUR NEXT CUP?
@@ -219,9 +232,10 @@ export default function Contact() {
                 {/* WhatsApp Button */}
 
                 <a
-                  href="https://wa.me/918409104406"
+                  href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Start WhatsApp enquiry"
                   className="group mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#a85c25] px-6 py-4 text-sm font-bold text-white shadow-[0_10px_25px_rgba(168,92,37,0.2)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#6f341f] hover:shadow-[0_15px_30px_rgba(168,92,37,0.28)]"
                 >
                   <MessageCircle size={18} />
@@ -234,9 +248,7 @@ export default function Contact() {
                   />
                 </a>
 
-                {/* =========================================
-                    BUSINESS INFORMATION
-                    ========================================= */}
+                {/* BUSINESS INFORMATION */}
 
                 <div className="mt-7 border-t border-[#eadfd2] pt-5">
                   <div className="flex flex-col gap-3 text-xs text-[#766960] sm:flex-row sm:items-center sm:justify-between">
@@ -255,9 +267,11 @@ export default function Contact() {
                     </span>
                   </div>
                 </div>
+
               </div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

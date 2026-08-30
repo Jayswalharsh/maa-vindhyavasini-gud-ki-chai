@@ -52,6 +52,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#6d321b] bg-[#431b0d] text-white">
+
       {/* ================= DESKTOP / MAIN HEADER ================= */}
 
       <div className="mx-auto flex h-[82px] max-w-[1500px] items-center justify-between px-6 lg:px-10 xl:px-14">
@@ -116,7 +117,7 @@ export default function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
 
-          {/* Phone */}
+          {/* Call Me */}
 
           <a
             href="tel:+918409104406"
@@ -125,13 +126,13 @@ export default function Header() {
           >
             <Phone size={17} />
 
-            <span>84091 04406</span>
+            <span>Call Me</span>
           </a>
 
           {/* WhatsApp */}
 
           <a
-            href="https://wa.me/918409104406"
+          href="https://wa.me/918409104406?text=Hello%20Maa%20Vindhyavasini%20Gud%20Ki%20Chai%20%F0%9F%91%8B%0A%0AI%20am%20interested%20in%20your%20jaggery-based%20tea%20and%20beverage%20products.%0A%0APlease%20share%20more%20details%20about%20your%20products%2C%20flavours%2C%20pack%20sizes%20and%20pricing.%0A%0AThank%20you!"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp enquiry"
@@ -224,22 +225,23 @@ export default function Header() {
                 })}
               </nav>
 
-              {/* Mobile Phone */}
+              {/* Mobile Call Me */}
 
               <a
                 href="tel:+918409104406"
                 onClick={closeMenu}
-                className="mt-5 flex items-center gap-3 rounded-xl border border-[#805037] px-4 py-3 font-semibold text-white"
+                aria-label="Call Maa Vindhyavasini"
+                className="mt-5 flex items-center gap-3 rounded-xl border border-[#805037] px-4 py-3 font-semibold text-white transition-colors hover:border-[#d99a24] hover:text-[#f3b32c]"
               >
                 <Phone size={18} />
 
-                <span>84091 04406</span>
+                <span>Call Me</span>
               </a>
 
               {/* Mobile WhatsApp */}
 
               <motion.a
-                href="https://wa.me/918409104406"
+               href="https://wa.me/918409104406?text=Hello%20Maa%20Vindhyavasini%20Gud%20Ki%20Chai%20%F0%9F%91%8B%0A%0AI%20am%20interested%20in%20your%20jaggery-based%20tea%20and%20beverage%20products.%0A%0APlease%20share%20more%20details%20about%20your%20products%2C%20flavours%2C%20pack%20sizes%20and%20pricing.%0A%0AThank%20you!"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMenu}
@@ -260,10 +262,12 @@ export default function Header() {
 
                 <span>WhatsApp Enquiry</span>
               </motion.a>
+
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
     </header>
   );
 }

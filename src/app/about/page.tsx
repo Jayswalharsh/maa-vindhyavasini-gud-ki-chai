@@ -89,8 +89,6 @@ export default function AboutPage() {
       <section className="relative flex min-h-[620px] items-center overflow-hidden bg-[url('/images/hero-bg.png')] bg-cover bg-center">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,11,6,.96)_0%,rgba(36,16,8,.82)_48%,rgba(36,16,8,.52)_100%)]" />
 
-        <div className="absolute -right-40 -bottom-64 h-[520px] w-[520px] rounded-full border border-[rgba(243,193,95,.2)]" />
-
         <div className="container relative z-10 py-32">
           <div className="max-w-3xl">
             <div className="mb-6 flex items-center gap-2 text-xs font-extrabold tracking-[2.5px] text-[var(--gold-light)]">
@@ -127,8 +125,8 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/30 bg-black/20 px-6 font-bold text-white backdrop-blur-sm transition hover:-translate-y-1 hover:bg-black/35"
               >
-                <MessageCircle size={18} />
-                WhatsApp Us
+                <MessageCircle size={18} className="text-white" />
+                <span className="text-white">WhatsApp Us</span>
               </a>
             </div>
 
